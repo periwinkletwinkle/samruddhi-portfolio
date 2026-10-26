@@ -29,9 +29,8 @@ jobs:
 
       - name: Build
         env:
-          # Project site: https://periwinkletwinkle.github.io/samruddhi-portfolio/
-          # After a custom domain is connected, set repository variable VITE_BASE_PATH to /.
-          VITE_BASE_PATH: ${{ vars.VITE_BASE_PATH || '/samruddhi-portfolio/' }}
+          # spicytofu.in is served from the domain root.
+          VITE_BASE_PATH: ${{ vars.VITE_BASE_PATH || '/' }}
         run: npm run build
 
       - uses: actions/upload-pages-artifact@v3

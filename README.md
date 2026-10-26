@@ -23,19 +23,13 @@ npm run preview
 1. Push this repository to GitHub.
 2. Open **Settings → Pages**.
 3. Under **Build and deployment**, set **Source** to **GitHub Actions**.
-4. Push to `main`. The workflow in `.github/workflows/deploy-pages.yml` publishes the site at `https://periwinkletwinkle.github.io/samruddhi-portfolio/`.
-
-The workflow sets the Vite base path to `/samruddhi-portfolio/` so assets resolve on that project URL.
+4. Push to `main`. The workflow in `.github/workflows/deploy-pages.yml` publishes the site. With the custom domain connected, it is served at `https://spicytofu.in`.
 
 ## Custom domain
 
-1. Copy `public/CNAME.example` to `public/CNAME` and put the bare domain on one line, with no `https://`.
-2. In GitHub **Settings → Pages → Custom domain**, enter the same hostname.
-3. Add a repository variable **Settings → Secrets and variables → Actions → Variables** named `VITE_BASE_PATH` with value `/`.
-4. At the registrar, add the DNS records GitHub shows.
-5. Push to `main`.
+The live domain is `spicytofu.in`. `public/CNAME` contains that hostname, and the Pages build uses base path `/`.
 
-Do not commit a `CNAME` file until the domain is registered and DNS is ready.
+DNS is managed at GoDaddy (`domaincontrol.com`). The apex needs GitHub Pages `A` and `AAAA` records, and `www` needs a `CNAME` to `periwinkletwinkle.github.io`. See [GitHub's custom domain docs](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site).
 
 ## Content
 
