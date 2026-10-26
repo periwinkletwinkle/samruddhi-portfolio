@@ -26,15 +26,15 @@ export const homeStacked: Artwork[] = [
     alt: 'Painted character in an olive and red draped costume, holding a dagger',
   },
   {
-    src: asset('images/home/02-costume-sheet.png'),
+    src: asset('images/home/02-costume-sheet.jpg'),
     alt: 'Costume detail sheet: headdress pin, fabric pattern, and dagger',
   },
   {
-    src: asset('images/home/03-colorways.png'),
+    src: asset('images/home/03-colorways.jpg'),
     alt: 'Three colorways of the same character design in red, ivory, and green',
   },
   {
-    src: asset('images/home/04-colorways.png'),
+    src: asset('images/home/04-colorways.jpg'),
     alt: 'Three colorways of the same character design in blue, orange, and purple',
   },
   {
