@@ -1,0 +1,36 @@
+@import 'tailwindcss';
+
+@theme inline {
+  --font-sans: 'Jost', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Gloock', Georgia, 'Times New Roman', serif;
+  --color-ink: #5b4d43;
+  --color-cream: #fff8f1;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply m-0 min-h-svh bg-cream font-sans text-ink antialiased;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 1.5;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button {
+    font: inherit;
+    color: inherit;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
