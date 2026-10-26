@@ -58,21 +58,6 @@ export const homeRow: Artwork[] = [
   },
 ]
 
-export const backgrounds: Artwork[] = [
-  {
-    src: asset('images/backgrounds/courtyard.png'),
-    alt: 'Courtyard seen through a doorway, with a blossom tree and wooden stools',
-  },
-  {
-    src: asset('images/backgrounds/coffee.png'),
-    alt: 'Still life of a coffee cup, saucer, and wooden spoon',
-  },
-  {
-    src: asset('images/backgrounds/stairs.jpg'),
-    alt: 'Outdoor stairs under a blue sky, with railings, poles, and greenery',
-  },
-]
-
 export const about = {
   portrait: asset('images/about/portrait.png'),
   portraitAlt: 'Illustration of a character in a strawberry hat holding a teacup',
