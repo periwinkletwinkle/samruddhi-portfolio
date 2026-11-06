@@ -1,18 +1,12 @@
 import { useCallback, useMemo, useState } from 'react'
 import { Lightbox } from '@/components/lightbox'
-import { homeRow, homeStacked, type Artwork } from '@/data/content'
-import { loadExtraImages, toArtwork } from '@/lib/extra-images'
+import type { Artwork } from '@/data/content'
+import { visibleGallery } from '@/lib/gallery-edits'
 
 export function HomePage() {
-  const extras = useState(() => loadExtraImages())[0]
-  const stacked = useMemo(
-    () => [...homeStacked, ...extras.filter((image) => image.placement === 'stacked').map(toArtwork)],
-    [extras],
-  )
-  const row = useMemo(
-    () => [...homeRow, ...extras.filter((image) => image.placement === 'row').map(toArtwork)],
-    [extras],
-  )
+  const entries = useState(() => visibleGallery())[0]
+  const stacked = useMemo(() => entries.filter((image) => image.placement === 'stacked'), [entries])
+  const row = useMemo(() => entries.filter((image) => image.placement === 'row'), [entries])
   const gallery = useMemo(() => [...stacked, ...row], [stacked, row])
   const [index, setIndex] = useState<number | null>(null)
   const close = useCallback(() => setIndex(null), [])
@@ -28,7 +22,7 @@ export function HomePage() {
       <div className="mx-auto flex max-w-[1440px] flex-col gap-2.5 px-3 pt-3 sm:px-5">
         {stacked.map((image, imageIndex) => (
           <button
-            key={image.src}
+            key={image.id}
             type="button"
             className="block cursor-zoom-in"
             aria-label={image.alt}
@@ -51,7 +45,7 @@ export function HomePage() {
         <div className="mx-auto flex w-max gap-2.5 px-3 sm:px-5">
           {row.map((image) => (
             <button
-              key={image.src}
+              key={image.id}
               type="button"
               className="block w-[min(78vw,520px)] shrink-0 cursor-zoom-in"
               aria-label={image.alt}
