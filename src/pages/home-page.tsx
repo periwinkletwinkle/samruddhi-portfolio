@@ -17,7 +17,7 @@ export function HomePage() {
   return (
     <div className="pb-6">
       <div className="mx-auto flex max-w-[1440px] flex-col gap-2.5 px-3 pt-3 sm:px-5">
-        {homeStacked.map((image) => (
+        {homeStacked.map((image, imageIndex) => (
           <button
             key={image.src}
             type="button"
@@ -25,7 +25,16 @@ export function HomePage() {
             aria-label={image.alt}
             onClick={() => open(image)}
           >
-            <img src={image.src} alt={image.alt} className="w-full" />
+            <img
+              src={image.src}
+              alt={image.alt}
+              width={image.width}
+              height={image.height}
+              className="h-auto w-full"
+              loading={imageIndex === 0 ? 'eager' : 'lazy'}
+              decoding="async"
+              fetchPriority={imageIndex === 0 ? 'high' : 'low'}
+            />
           </button>
         ))}
       </div>
@@ -42,7 +51,12 @@ export function HomePage() {
               <img
                 src={image.src}
                 alt={image.alt}
-                className="aspect-square w-full object-cover"
+                width={image.width}
+                height={image.height}
+                className="aspect-square h-auto w-full object-cover"
+                loading="lazy"
+                decoding="async"
+                fetchPriority="low"
               />
             </button>
           ))}

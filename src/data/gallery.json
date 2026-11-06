@@ -1,0 +1,54 @@
+{
+  "stacked": [
+    {
+      "file": "01-character.jpg",
+      "alt": "Painted character in an olive and red draped costume, holding a dagger",
+      "width": 2400,
+      "height": 1350
+    },
+    {
+      "file": "02-costume-sheet.jpg",
+      "alt": "Costume detail sheet: headdress pin, fabric pattern, and dagger",
+      "width": 2400,
+      "height": 1350
+    },
+    {
+      "file": "03-colorways.jpg",
+      "alt": "Three colorways of the same character design in red, ivory, and green",
+      "width": 2400,
+      "height": 1350
+    },
+    {
+      "file": "04-colorways.jpg",
+      "alt": "Three colorways of the same character design in blue, orange, and purple",
+      "width": 2400,
+      "height": 1350
+    },
+    {
+      "file": "05-silhouettes.jpg",
+      "alt": "Fourteen numbered silhouette studies of costume variations",
+      "width": 2400,
+      "height": 1322
+    }
+  ],
+  "row": [
+    {
+      "file": "06-armor-study.jpg",
+      "alt": "Color and line study of a character in blue and gold armor",
+      "width": 2000,
+      "height": 1750
+    },
+    {
+      "file": "07-expressions.jpg",
+      "alt": "Expression sheet of a horned character with white braids",
+      "width": 1800,
+      "height": 1715
+    },
+    {
+      "file": "08-portrait.jpg",
+      "alt": "Portrait of a character with pale blue hair and gold jewelry",
+      "width": 1487,
+      "height": 1800
+    }
+  ]
+}

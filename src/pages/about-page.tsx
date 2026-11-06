@@ -3,7 +3,15 @@ import { about, site } from '@/data/content'
 export function AboutPage() {
   return (
     <section className="mx-auto grid max-w-[1100px] items-start gap-10 px-6 py-10 sm:px-10 md:grid-cols-2 md:py-14">
-      <img src={about.portrait} alt={about.portraitAlt} className="w-full" />
+      <img
+        src={about.portrait}
+        alt={about.portraitAlt}
+        width={about.portraitWidth}
+        height={about.portraitHeight}
+        className="h-auto w-full"
+        loading="lazy"
+        decoding="async"
+      />
       <div className="max-w-md md:pt-6">
         <h1 className="font-sans text-[1.35rem] font-normal tracking-wide">{site.name.toUpperCase()}</h1>
         <p className="mt-1 tracking-[0.08em]">{site.role.toUpperCase()}</p>
