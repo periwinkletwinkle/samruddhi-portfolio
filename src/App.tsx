@@ -7,7 +7,8 @@ import { HomePage } from '@/pages/home-page'
 export default function App() {
   return (
     <Routes>
-      <Route path="admin" element={<AdminPage />} />
+      <Route path="admin" element={<Navigate to="/" replace />} />
+      <Route path="admin-tofu" element={<AdminPage />} />
       <Route element={<SiteLayout />}>
         <Route index element={<HomePage />} />
         <Route path="about" element={<AboutPage />} />

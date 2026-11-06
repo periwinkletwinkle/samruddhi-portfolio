@@ -1,10 +1,19 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { Lightbox } from '@/components/lightbox'
 import { homeRow, homeStacked, type Artwork } from '@/data/content'
-
-const gallery = [...homeStacked, ...homeRow]
+import { loadExtraImages, toArtwork } from '@/lib/extra-images'
 
 export function HomePage() {
+  const extras = useState(() => loadExtraImages())[0]
+  const stacked = useMemo(
+    () => [...homeStacked, ...extras.filter((image) => image.placement === 'stacked').map(toArtwork)],
+    [extras],
+  )
+  const row = useMemo(
+    () => [...homeRow, ...extras.filter((image) => image.placement === 'row').map(toArtwork)],
+    [extras],
+  )
+  const gallery = useMemo(() => [...stacked, ...row], [stacked, row])
   const [index, setIndex] = useState<number | null>(null)
   const close = useCallback(() => setIndex(null), [])
   const set = useCallback((next: number) => setIndex(next), [])
@@ -17,7 +26,7 @@ export function HomePage() {
   return (
     <div className="pb-6">
       <div className="mx-auto flex max-w-[1440px] flex-col gap-2.5 px-3 pt-3 sm:px-5">
-        {homeStacked.map((image, imageIndex) => (
+        {stacked.map((image, imageIndex) => (
           <button
             key={image.src}
             type="button"
@@ -40,7 +49,7 @@ export function HomePage() {
       </div>
       <div className="mt-2.5 overflow-x-auto">
         <div className="mx-auto flex w-max gap-2.5 px-3 sm:px-5">
-          {homeRow.map((image) => (
+          {row.map((image) => (
             <button
               key={image.src}
               type="button"

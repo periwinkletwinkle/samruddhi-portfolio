@@ -50,14 +50,3 @@ export function blobToBase64(blob: Blob): Promise<string> {
     reader.readAsDataURL(blob)
   })
 }
-
-export function imageFileName(original: string) {
-  const base = original
-    .replace(/\.[^.]+$/, '')
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-|-$/g, '')
-    .slice(0, 40)
-  const stamp = new Date().toISOString().replace(/[-:.TZ]/g, '').slice(0, 14)
-  return `${base || 'image'}-${stamp}.jpg`
-}
